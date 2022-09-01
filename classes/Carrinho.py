@@ -17,15 +17,24 @@ class Carrinho:
 
     def __init__(self):
         # Chave é o id do Produto e o Valor é a quantidade desse item no carrinho
-        self.__itens = {}
+        self.itens = {}
 
     def adicionar_item(self, item:Produto, qtd):
-        
-        id = item.get_id()
-        
-        # Implemente a adição do item no dicionário
-        
+
+        if item in self.itens:
+            self.itens[item] += qtd
+        else:
+            self.itens[item] = qtd
 
     def remover_item(self, item:Produto):
-        pass
-        # Implemente este método
+
+        id = item.get_id()
+        del self.itens[id]
+
+    def listar_itens(compra):
+
+        newList = []
+        for item in compra.keys():
+            newList.append(str(item) + str(compra[item]))
+
+        return newList
