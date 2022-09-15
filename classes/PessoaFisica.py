@@ -33,12 +33,6 @@ class PessoaFisica:
         numb = str(end.cep)
         self.__enderecos[apelido_endereco] = numb
 
-    def remover_endereco(self, apelido_endereco):
-        pass
-
-    def get_endereco(self, apelido_endereco):
-        pass
-
     def listar_enderecos(self):
         dictio = self.__enderecos
         return dictio
